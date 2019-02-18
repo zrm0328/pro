@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<style type="text/css" media="screen">
+	.demo{
+		font-size: 10px;
+	}
+	.sou{
+		font-size: 10px;
+		float: right;
+	}
+	.logo{
+		height: 50px;
+		width: 100%;
+		background-color: pink;
+	}
+	.logo span{
+		padding: 40px;
+
+
+	}
+	.img-box{
+		width: 800px;
+		height: 300px;
+	/*	background-color: red;*/
+		overflow: hidden;
+		position: relative;
+		margin: 0 auto;
+	}
+	.img{
+		width: 500px;
+		height: 200px;
+		position: absolute;
+		margin: 10px;
+
+	}
+</style>
+</head>
+<body>
+	<div>
+		<img src="./image/图片2.png" alt="">
+		<span class="demo">
+			<input type="checkbox" name="">娱乐客户端
+			<input type="checkbox" name="">互助资料库
+			<input type="checkbox" name="">站点地图
+		</span>
+			<span class="sou">
+				<select>
+					<option value="">新闻</option>
+				</select>
+				<input type="text" placeholder="面面吻头发"><button type="">搜索</button>
+			</span>
+			<div class="logo">
+				
+				<span>明星</span>
+				<span>微博</span>
+				<span>电影</span>
+				<span>明星</span>
+				<span>微博</span>
+				<span>电影</span>
+				<span>明星</span>
+				<span>微博</span>
+				<span>电影</span>
+				<span>明星</span>
+				<span>微博</span>
+				<span>电影</span>
+				
+
+			</div>
+			<div class="img-box">
+				<div class="img">
+				<ul>
+					<!-- <li><img src="./image/exam1.jpg" alt=""></li> -->
+					<li><img src="./image/exam2.jpg" alt=""></li>
+					<li><img src="./image/exam3.jpg" alt=""></li>
+					<li><img src="./image/exam4.jpg" alt=""></li>
+
+				</ul>
+			</div>
+			</div>
+			
+	</div>
+</body>
+</html>
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		function demo(){
+			$('.img').animate({left:"-500px"},1000,"linear",function(){
+				$(this).css({left:"0px"});
+				$(this).children("li").first().remove().clone(true).appendTo($(this));
+			})
+		}
+		$iteam = setInterval(demo,1000);
+	})
+	$(".logo span").on("mousemove",function(){
+		$(this).css("color","red");
+	})
+</script>
